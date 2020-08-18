@@ -21,7 +21,7 @@ function writeJson(girls) {
  */
 async function writeMarkdown(girls) {
   const md = await generateMarkdown(girls);
-  fs.writeFileSync("./dist/index.md", md);
+  fs.writeFileSync("./dist/README.md", md);
   console.log(`老婆列表生成完毕，共 ${girls.length} 位老婆！`);
 }
 
