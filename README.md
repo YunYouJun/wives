@@ -1,6 +1,6 @@
 # Wives
 
-![Wives](https://github.com/YunYouJun/wives/workflows/Wives/badge.svg)
+[![Wives](https://github.com/YunYouJun/wives/workflows/Wives/badge.svg)](https://wives.yunyoujun.cn/)
 
 Data for my favourite girls.
 

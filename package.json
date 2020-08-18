@@ -8,7 +8,7 @@
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "scripts": {
-    "build": "node scripts/index.js"
+    "build": "node scripts/index.js && cp -r ./public/. ./dist"
   },
   "dependencies": {
     "js-yaml": "^3.14.0",
