@@ -50,6 +50,7 @@ query ($id: Int) { # Define which variables will be used in the query (id)
  */
 async function generateMarkdown(girls) {
   let toc_md = `# 可爱的女孩子们 (${girls.length})
+
 |#|姓名|头像|立绘|作品|萌娘百科|
 |-|---|---|----|---|---|
 `;
