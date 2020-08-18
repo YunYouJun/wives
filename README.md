@@ -1,5 +1,7 @@
 # girls
 
+![Girls](https://github.com/YunYouJun/girls/workflows/Girls/badge.svg)
+
 Data for my favourite girls.
 
 ## 格式说明
