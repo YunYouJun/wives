@@ -52,7 +52,7 @@ async function generateMarkdown(girls) {
   let toc_md = `# 可爱的女孩子们 (${girls.length})
 
 |#|姓名|头像|立绘|作品|萌娘百科|
-|-|---|---|----|---|---|
+|-|---|:-:|:--:|---|---|
 `;
 
   for (let i = 0; i < girls.length; i++) {
@@ -69,7 +69,7 @@ async function generateMarkdown(girls) {
     const avatar = `<img width="50" src="${girl.avatar}" alt="${girl.name}"/>`;
     // 立绘
     const tachie = girl.tachie
-      ? `<img width="50" src="./images/${girl.avatar}" alt="${girl.tachie}"/>`
+      ? `<img width="50" src="./images/${girl.tachie}" alt="${girl.name}"/>`
       : "暂无";
     // 出自作品及豆瓣链接
     const from = `[${girl.from}](https://movie.douban.com/subject/${girl.douban_id})`;
