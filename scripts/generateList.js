@@ -22,7 +22,9 @@ function generateMarkdown(girls) {
       ? `<img width="50" src="./images/${girl.tachie}" alt="${girl.name}"/>`
       : "暂无";
     // 出自作品及豆瓣链接
-    const from = `[${girl.from}](https://movie.douban.com/subject/${girl.douban_id})`;
+    const from = girl.douban_id
+      ? `[${girl.from}](https://movie.douban.com/subject/${girl.douban_id}/)`
+      : `[${girl.from}](https://search.douban.com/movie/subject_search?search_text=${girl.from})`;
     // 萌娘百科链接
     const moegirl = `[Link](https://zh.moegirl.org.cn/${
       girl.moegirl ? girl.moegirl : girl.name
