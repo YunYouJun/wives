@@ -4,6 +4,12 @@
 
 Data for my favourite girls.
 
+## JSON
+
+- GitHub Pages: <https://wives.yunyoujun.cn/girls.json>
+- Vercel: <https://wives.vercel.app/girls.json>
+- JSDELIVR: <https://cdn.jsdelivr.net/gh/YunYouJun/wives@gh-pages/girls.json>
+
 ## 格式说明
 
 | Param      | Description                                 |
