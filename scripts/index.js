@@ -19,9 +19,11 @@ async function writeJson(girls) {
   girls.forEach(async (girl) => {
     promiseArr.push(
       (async (girl) => {
-        girl.avatar = girl.anilist_id
-          ? await getImageFromAniList(girl.anilist_id)
-          : girl.avatar;
+        if (!girl.avatar) {
+          girl.avatar = girl.anilist_id
+            ? await getImageFromAniList(girl.anilist_id)
+            : girl.tachie;
+        }
       })(girl)
     );
   });

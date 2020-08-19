@@ -12,15 +12,15 @@ Data for my favourite girls.
 
 ## 格式说明
 
-| Param      | Description                                 |
-| ---------- | ------------------------------------------- |
-| name       | 人物名称                                    |
-| avatar     | 头像 （不存在时，默认使用立绘）             |
-| tachie     | [立绘](https://mzh.moegirl.org.cn/立绘)     |
-| from       | 出自的作品                                  |
-| anilist_id | [AniList](https://anilist.co/) Character ID |
-| douban_id  | [豆瓣](https://www.douban.com/) 作品 ID     |
-| reason     | 喜欢的原因                                  |
+| Param      | Description                                   |
+| ---------- | --------------------------------------------- |
+| name       | 人物名称                                      |
+| avatar     | 头像 （不存在时，依次默认使用 anilist、立绘） |
+| tachie     | [立绘](https://mzh.moegirl.org.cn/立绘)       |
+| from       | 出自的作品                                    |
+| anilist_id | [AniList](https://anilist.co/) Character ID   |
+| douban_id  | [豆瓣](https://www.douban.com/) 作品 ID       |
+| reason     | 喜欢的原因                                    |
 
 ## Ref
 
