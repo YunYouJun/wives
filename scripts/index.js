@@ -22,7 +22,7 @@ async function writeJson(girls) {
         if (!girl.avatar) {
           girl.avatar = girl.anilist_id
             ? await getImageFromAniList(girl.anilist_id)
-            : girl.tachie;
+            : `https://cdn.jsdelivr.net/gh/YunYouJun/wives@gh-pages/images/tachie/${girl.tachie}`;
         }
       })(girl)
     );
