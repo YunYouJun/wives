@@ -2,7 +2,7 @@
 
 [![Wives](https://github.com/YunYouJun/wives/workflows/Wives/badge.svg)](https://wives.yunyoujun.cn/)
 
-Data for my favourite girls.
+Data for my favourite [girls](https://www.yunyoujun.cn/girls/).
 
 ## JSON
 

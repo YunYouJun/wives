@@ -19,7 +19,7 @@ function generateMarkdown(girls) {
     const avatar = `<img width="50" src="${girl.avatar}" alt="${girl.name}"/>`;
     // 立绘
     const tachie = girl.tachie
-      ? `<img width="50" src="./images/tachie/${girl.tachie}" alt="${girl.name}"/>`
+      ? `<img width="50" src="${girl.tachie}" alt="${girl.name}"/>`
       : "暂无";
     // 出自作品及豆瓣链接
     const from = girl.douban_id
