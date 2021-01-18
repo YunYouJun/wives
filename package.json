@@ -12,7 +12,7 @@
     "update": "git add -A && git commit -m '♀: update waifu' && git push"
   },
   "dependencies": {
-    "js-yaml": "^3.14.1",
+    "js-yaml": "^4.0.0",
     "node-fetch": "^2.6.1"
   },
   "homepage": "https://www.yunyoujun.cn/girls/"
