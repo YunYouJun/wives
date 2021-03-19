@@ -4,6 +4,9 @@ const yaml = require("js-yaml");
 const { getImageFromAniList } = require("./utils");
 const { generateMarkdown } = require("./generateList");
 
+const { common } = require("@yunyoujun/utils");
+const logger = require("./logger");
+
 /**
  * 生成 Json 列表
  * @param {*} girls [girl]
@@ -15,31 +18,34 @@ async function writeJson(girls) {
     if (code !== "EEXIST") return;
   }
 
-  let promiseArr = [];
-  girls.forEach(async (girl) => {
-    promiseArr.push(
-      (async (girl) => {
-        if (!girl.avatar) {
-          girl.avatar = girl.anilist_id
-            ? await getImageFromAniList(girl.anilist_id)
-            : `https://cdn.jsdelivr.net/gh/YunYouJun/wives@gh-pages/images/tachie/${girl.tachie}`;
-        }
-      })(girl)
-    );
-  });
-  await Promise.all(promiseArr);
+  // https://anilist.gitbook.io/anilist-apiv2-docs/overview/rate-limiting
+  // 90/m
+  const maxRequests = 90;
+  for (let i = 0; i < girls.length; i++) {
+    if ((i + 1) % maxRequests === 0) {
+      logger.info("Sleep 60s to avoid too many requests!");
+      await common.sleep(60000);
+    }
+
+    const girl = girls[i];
+    if (!girl.avatar) {
+      girl.avatar = girl.anilist_id
+        ? await getImageFromAniList(girl.anilist_id)
+        : `https://cdn.jsdelivr.net/gh/YunYouJun/wives@gh-pages/images/tachie/${girl.tachie}`;
+    }
+  }
 
   fs.writeFileSync("./dist/girls.json", JSON.stringify(girls));
-  console.log("Generate girls.json successfully!");
+  logger.success("Generate girls.json successfully!");
 }
 
 /**
  * 写入 Markdown 文件
  */
-async function writeMarkdown(girls) {
-  const md = await generateMarkdown(girls);
+function writeMarkdown(girls) {
+  const md = generateMarkdown(girls);
   fs.writeFileSync("./dist/README.md", md);
-  console.log(`老婆列表生成完毕，共 ${girls.length} 位老婆！`);
+  logger.success(`老婆列表生成完毕，共 ${girls.length} 位老婆！`);
 }
 
 // Let's go.

@@ -27,3 +27,9 @@ Data for my favourite [girls](https://www.yunyoujun.cn/girls/).
 ### API
 
 - [ApiV2-GraphQL-Docs](https://github.com/AniList/ApiV2-GraphQL-Docs)
+
+## FAQ
+
+> [Rate Limiting | AniList](https://anilist.gitbook.io/anilist-apiv2-docs/overview/rate-limiting)
+
+90 requests/minute

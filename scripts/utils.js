@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+const logger = require("./logger");
 
 /**
  * 从 [AniList](https://anilist.co/) 获取图片
@@ -41,6 +42,10 @@ query ($id: Int) { # Define which variables will be used in the query (id)
     })
     .then((data) => {
       return data.data.Character.image.medium;
+    })
+    .catch((e) => {
+      logger.error("Anilist ID:", id);
+      console.error(e);
     });
 
   return mediumImage;
