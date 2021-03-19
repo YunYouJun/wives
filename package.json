@@ -5,13 +5,17 @@
   "description": "My Favourite Wives.",
   "main": "index.js",
   "repository": "https://github.com/YunYouJun/wives.git",
+  "bin": "bin/index.js",
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "scripts": {
     "build": "node scripts/index.js && cp -r ./public/. ./dist",
-    "update": "git add -A && git commit -m '♀: update waifu' && git push"
+    "update": "git add -A && git commit -m '♀: update waifu' && git push",
+    "wives": "wives add"
   },
   "dependencies": {
+    "commander": "^7.1.0",
+    "inquirer": "^8.0.0",
     "js-yaml": "^4.0.0",
     "node-fetch": "^2.6.1"
   },
