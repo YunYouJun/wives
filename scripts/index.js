@@ -6,6 +6,7 @@ const { generateMarkdown } = require("./generateList");
 
 const { common } = require("@yunyoujun/utils");
 const logger = require("./logger");
+const { dataFile } = require("../bin/config");
 
 /**
  * 生成 Json 列表
@@ -51,7 +52,7 @@ function writeMarkdown(girls) {
 // Let's go.
 async function main() {
   try {
-    const girls = yaml.load(fs.readFileSync("./data/list.yml", "utf8"));
+    const girls = yaml.load(fs.readFileSync(dataFile, "utf8"));
     await writeJson(girls);
     writeMarkdown(girls);
   } catch (e) {

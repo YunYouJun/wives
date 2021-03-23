@@ -1,4 +1,4 @@
-const dataFile = "./data/list.yml";
+const dataFile = "./public/data/list.yml";
 
 const questions = [
   {
