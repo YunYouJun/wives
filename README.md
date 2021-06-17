@@ -33,3 +33,9 @@ Data for my favourite [girls](https://www.yunyoujun.cn/girls/).
 > [Rate Limiting | AniList](https://anilist.gitbook.io/anilist-apiv2-docs/overview/rate-limiting)
 
 90 requests/minute
+
+## Todo
+
+- [ ] TypeScript 重构
+- [ ] 一个独立可预览的页面
+  - [ ] d3/threejs 人物连线（to me）
