@@ -268,6 +268,7 @@
   from: 女高中生的虚度日常
   anilist_id: 131296
   douban_id: 34906731
+  url: https://zh.moegirl.org.cn/菊池茜(女高中生的虚度日常)
 - name: 牧濑红莉栖
   from: 命运石之门
   anilist_id: 34470
@@ -388,3 +389,8 @@
   douban_id: 27080659
   from: SSSS.GRIDMAN
   reason: 慵懒 JK！
+- name: 莉姆
+  anilist_id: 206201
+  douban_id: 35128773
+  from: 异世界迷宫黑心企业
+  reason: 可爱！
