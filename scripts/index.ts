@@ -1,12 +1,12 @@
-const fs = require("fs");
-const yaml = require("js-yaml");
+import fs from "fs";
+import yaml from "js-yaml";
 
-const { getImageFromAniList } = require("./utils");
-const { generateMarkdown } = require("./generateList");
+import { getImageFromAniList } from "./utils";
+import { generateMarkdown } from "./generateList";
 
-const { common } = require("@yunyoujun/utils");
-const logger = require("./logger");
-const { dataFile } = require("../bin/config");
+import { common } from "@yunyoujun/utils";
+import logger from "./logger";
+import { dataFile } from "../bin/config";
 
 /**
  * 生成 Json 列表

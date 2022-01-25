@@ -1,11 +1,11 @@
-const fetch = require("node-fetch");
-const logger = require("./logger");
+import fetch from "node-fetch";
+import { logger } from "./logger";
 
 /**
  * 从 [AniList](https://anilist.co/) 获取图片
  * @param {*} id 角色 ID
  */
-async function getImageFromAniList(id) {
+export async function getImageFromAniList(id) {
   const query = `
 query ($id: Int) { # Define which variables will be used in the query (id)
   Character (id: $id) {
@@ -50,7 +50,3 @@ query ($id: Int) { # Define which variables will be used in the query (id)
 
   return mediumImage;
 }
-
-module.exports = {
-  getImageFromAniList,
-};

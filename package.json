@@ -9,18 +9,19 @@
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "scripts": {
-    "build": "node scripts/index.js && cp -r ./public/. ./dist",
+    "build": "esno scripts/index.ts && cp -r ./public/. ./dist",
     "update": "git add -A && git commit -m '♀: update waifu' && git push",
     "wives": "wives add"
   },
   "dependencies": {
-    "commander": "^8.0.0",
-    "inquirer": "^8.1.1",
+    "commander": "^8.3.0",
+    "inquirer": "^8.2.0",
     "js-yaml": "^4.1.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^3.2.0"
   },
   "homepage": "https://www.yunyoujun.cn/girls/",
   "devDependencies": {
-    "@yunyoujun/utils": "^0.1.1"
+    "@yunyoujun/utils": "^0.1.4",
+    "esno": "^0.14.0"
   }
 }

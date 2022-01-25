@@ -1,7 +1,17 @@
+export interface Girl {
+  name: string
+  avatar: string
+  anilist_id: string
+  tachie: string
+  from: string
+  douban_id: string
+  moegirl?: string
+}
+
 /**
  * 生成 markdown 列表
  */
-function generateMarkdown(girls) {
+export function generateMarkdown(girls: Girl[]) {
   let toc_md = `# 可爱的女孩子们 (${girls.length})
 
 |#|姓名|头像|立绘|作品|萌娘百科|
@@ -39,7 +49,3 @@ function generateMarkdown(girls) {
 
   return toc_md;
 }
-
-module.exports = {
-  generateMarkdown,
-};
