@@ -1,12 +1,4 @@
-export interface Girl {
-  name: string
-  avatar: string
-  anilist_id: string
-  tachie: string
-  from: string
-  douban_id: string
-  moegirl?: string
-}
+import type { Girl } from './types'
 
 /**
  * 生成 markdown 列表

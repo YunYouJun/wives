@@ -12,6 +12,7 @@ program.version(pkg.version)
 program.command('add').action(async() => {
   const answers = await inquirer.prompt(questions)
   const item = yaml.dump([answers])
+  // eslint-disable-next-line no-console
   console.log(item)
   fs.appendFileSync(dataFile, item)
 })
