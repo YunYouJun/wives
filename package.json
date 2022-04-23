@@ -1,27 +1,33 @@
 {
   "name": "wives",
-  "private": true,
   "version": "0.0.1",
+  "private": true,
   "description": "My Favourite Wives.",
-  "main": "index.js",
-  "repository": "https://github.com/YunYouJun/wives.git",
-  "bin": "bin/index.js",
-  "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
+  "author": "YunYouJun <me@yunyoujun.cn>",
+  "repository": "https://github.com/YunYouJun/wives.git",
+  "main": "index.js",
+  "bin": "bin/index.js",
   "scripts": {
     "build": "esno scripts/index.ts && cp -r ./public/. ./dist",
     "update": "git add -A && git commit -m '♀: update waifu' && git push",
-    "wives": "wives add"
+    "wives": "wives add",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "commander": "^9.1.0",
+    "commander": "^9.2.0",
     "inquirer": "^8.2.2",
     "js-yaml": "^4.1.0",
     "node-fetch": "^3.2.3"
   },
   "homepage": "https://www.yunyoujun.cn/girls/",
   "devDependencies": {
+    "@antfu/eslint-config": "^0.20.7",
     "@yunyoujun/utils": "^0.1.4",
-    "esno": "^0.14.1"
+    "consola": "^2.15.3",
+    "eslint": "^8.14.0",
+    "esno": "^0.14.1",
+    "typescript": "^4.6.3"
   }
 }
