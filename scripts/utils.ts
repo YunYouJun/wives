@@ -42,6 +42,16 @@ query ($id: Int) { # Define which variables will be used in the query (id)
 
       // maybe too many requests
       // retry: 1,
+
+      async onResponseError({ response }) {
+        const status = (response as any).status as number
+        // 429 too many requests
+        if (status && status === 429) {
+          consola.info('Too many requests. Sleep 60s ...')
+          await sleep(6000)
+          mediumImage = await getImageFromAniList(id)
+        }
+      },
     })
 
     mediumImage = data.data.Character.image.medium as string
@@ -49,13 +59,6 @@ query ($id: Int) { # Define which variables will be used in the query (id)
   catch (e: any) {
     consola.error('Anilist ID:', id)
     console.error(e)
-    const status = e.data.errors[0].status as number
-    // 429 too many requests
-    if (status && status === 429) {
-      consola.info('Sleep and try again')
-      await sleep(6000)
-      mediumImage = await getImageFromAniList(id)
-    }
   }
 
   return mediumImage
