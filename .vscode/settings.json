@@ -1,5 +1,10 @@
 {
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "cSpell.words": [
+    "anilist",
+    "moegirl",
+    "tachie"
+  ]
 }

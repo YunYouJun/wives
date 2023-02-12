@@ -1,6 +1,6 @@
-const dataFile = './public/data/list.yml'
+export const dataFile = './public/data/list.yml'
 
-const questions = [
+export const questions = [
   {
     type: 'input',
     name: 'name',
@@ -27,8 +27,3 @@ const questions = [
     message: '喜爱原因:',
   },
 ]
-
-module.exports = {
-  dataFile,
-  questions,
-}

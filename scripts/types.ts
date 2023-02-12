@@ -1,7 +1,10 @@
 export interface Girl {
   name: string
   avatar: string
-  anilist_id: string
+  /**
+   * anilist use int as character id
+   */
+  anilist_id: number
   /**
    * 立绘
    */

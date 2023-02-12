@@ -2,15 +2,17 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/eslint-config': ^0.35.2
+  '@types/inquirer': ^9.0.3
   '@types/js-yaml': ^4.0.5
   '@types/node': ^18.13.0
-  '@yunyoujun/utils': ^0.2.3
+  '@yunyoujun/utils': ^0.3.4
   commander: ^10.0.0
   consola: ^2.15.3
   eslint: ^8.14.0
   inquirer: ^9.1.4
   js-yaml: ^4.1.0
   node-fetch: ^3.2.3
+  ofetch: ^1.0.0
   tsx: ^3.12.3
   typescript: ^4.6.3
 
@@ -19,12 +21,14 @@ dependencies:
   inquirer: 9.1.4
   js-yaml: 4.1.0
   node-fetch: 3.3.0
+  ofetch: 1.0.0
 
 devDependencies:
   '@antfu/eslint-config': 0.35.2_7kw3g6rralp5ps6mg3uyzz6azm
+  '@types/inquirer': 9.0.3
   '@types/js-yaml': 4.0.5
   '@types/node': 18.13.0
-  '@yunyoujun/utils': 0.2.3
+  '@yunyoujun/utils': 0.3.4
   consola: 2.15.3
   eslint: 8.34.0
   tsx: 3.12.3
@@ -436,6 +440,13 @@ packages:
       fastq: 1.15.0
     dev: true
 
+  /@types/inquirer/9.0.3:
+    resolution: {integrity: sha512-CzNkWqQftcmk2jaCWdBTf9Sm7xSw4rkI1zpU/Udw3HX5//adEZUIm9STtoRP1qgWj0CWQtJ9UTvqmO2NNjhMJw==}
+    dependencies:
+      '@types/through': 0.0.30
+      rxjs: 7.8.0
+    dev: true
+
   /@types/js-yaml/4.0.5:
     resolution: {integrity: sha512-FhpRzf927MNQdRZP0J5DLIdTXhjLYzeUTmLAu69mnVksLH9CJY3IuSeEgbKUki7GQZm0WqDkGzyxju2EZGD2wA==}
     dev: true
@@ -464,6 +475,12 @@ packages:
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
+    dev: true
+
+  /@types/through/0.0.30:
+    resolution: {integrity: sha512-FvnCJljyxhPM3gkRgWmxmDZyAQSiBQQWLI0A0VFL0K7W1oRUrPJSqNO0NvTnLkBcotdlp3lKvaT0JrnyRDkzOg==}
+    dependencies:
+      '@types/node': 18.13.0
     dev: true
 
   /@types/unist/2.0.6:
@@ -600,16 +617,16 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@yunyoujun/logger/0.2.3:
-    resolution: {integrity: sha512-R9qW+3WdmxGI/ua5x6qMv7eIKD+fcBQezLYOJqvkqUjZOxeGMhf87hyu10QkTCwOw+gfBdUZEKD9dwjx76w81w==}
+  /@yunyoujun/logger/0.3.4:
+    resolution: {integrity: sha512-vqihSecac3MbVj/I9eVE50MaYRlds2s9j1vsiOMv5nDbY4YpDi1Z1FwAeAt4GLsdEwbsSug1INcQXmV9AUePtg==}
     dependencies:
       chalk: 4.1.2
     dev: true
 
-  /@yunyoujun/utils/0.2.3:
-    resolution: {integrity: sha512-SbkjL/6OnXVNdP+ZnrIEVBooP+4jCbbFgWJnQ88ae4b0w9Y1IU2p65s419phXP3iAQdFySZnuGiyzb2THJgYQw==}
+  /@yunyoujun/utils/0.3.4:
+    resolution: {integrity: sha512-J/ih7yL+P6KZr0gKwwqjtfpjeR5QX4KZ2DzALoa7bU/XL8oMZ8UPGomBMNvhilSEmyx0TaKyLLsx39DIRyvesQ==}
     dependencies:
-      '@yunyoujun/logger': 0.2.3
+      '@yunyoujun/logger': 0.3.4
     dev: true
 
   /acorn-jsx/5.3.2_acorn@8.8.2:
@@ -949,6 +966,10 @@ packages:
       has-property-descriptors: 1.0.0
       object-keys: 1.1.1
     dev: true
+
+  /destr/1.2.2:
+    resolution: {integrity: sha512-lrbCJwD9saUQrqUfXvl6qoM+QN3W7tLV5pAOs+OqOmopCCz/JkE05MHedJR1xfk4IAnZuJXPVuN5+7jNA2ZCiA==}
+    dev: false
 
   /dir-glob/3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
@@ -2227,6 +2248,10 @@ packages:
     engines: {node: '>=10.5.0'}
     dev: false
 
+  /node-fetch-native/1.0.1:
+    resolution: {integrity: sha512-VzW+TAk2wE4X9maiKMlT+GsPU4OMmR1U9CrHSmd3DFLn2IcZ9VJ6M6BBugGfYUnPCLSYxXdZy17M0BEJyhUTwg==}
+    dev: false
+
   /node-fetch/3.3.0:
     resolution: {integrity: sha512-BKwRP/O0UvoMKp7GNdwPlObhYGB5DQqwhEDQlNKuoqwVYSxkSZCSbHjnFFmUEtwSKRPU4kNK8PbDYYitwaE3QA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -2278,6 +2303,14 @@ packages:
       define-properties: 1.2.0
       es-abstract: 1.21.1
     dev: true
+
+  /ofetch/1.0.0:
+    resolution: {integrity: sha512-d40aof8czZFSQKJa4+F7Ch3UC5D631cK1TTUoK+iNEut9NoiCL+u0vykl/puYVUS2df4tIQl5upQcolIcEzQjQ==}
+    dependencies:
+      destr: 1.2.2
+      node-fetch-native: 1.0.1
+      ufo: 1.0.1
+    dev: false
 
   /once/1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
@@ -2544,7 +2577,6 @@ packages:
     resolution: {integrity: sha512-F2+gxDshqmIub1KdvZkaEfGDwLNpPvk9Fs6LD/MyQxNgMds/WH9OdDDXOmxUZpME+iSK3rQCctkL0DYyytUqMg==}
     dependencies:
       tslib: 2.5.0
-    dev: false
 
   /safe-buffer/5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
@@ -2767,7 +2799,6 @@ packages:
 
   /tslib/2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
-    dev: false
 
   /tsutils/3.21.0_typescript@4.9.5:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
@@ -2830,6 +2861,10 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
+
+  /ufo/1.0.1:
+    resolution: {integrity: sha512-boAm74ubXHY7KJQZLlXrtMz52qFvpsbOxDcZOnw/Wf+LS4Mmyu7JxmzD4tDLtUQtmZECypJ0FrCz4QIe6dvKRA==}
+    dev: false
 
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}

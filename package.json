@@ -1,19 +1,17 @@
 {
   "name": "wives",
   "version": "0.0.1",
-  "packageManager": "pnpm@7.27.0",
   "private": true,
+  "packageManager": "pnpm@7.27.0",
   "description": "My Favourite Wives.",
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "homepage": "https://www.yunyoujun.cn/girls/",
   "repository": "https://github.com/YunYouJun/wives.git",
-  "main": "index.js",
-  "bin": "bin/index.js",
   "scripts": {
     "build": "tsx scripts/index.ts && cp -r ./public/. ./dist",
     "update": "git add -A && git commit -m '♀: update waifu' && git push",
-    "wives": "wives add",
+    "wives": "tsx scripts/wives add",
     "lint": "eslint .",
     "typecheck": "tsc ./**/*.ts --noEmit"
   },
@@ -21,13 +19,15 @@
     "commander": "^10.0.0",
     "inquirer": "^9.1.4",
     "js-yaml": "^4.1.0",
-    "node-fetch": "^3.2.3"
+    "node-fetch": "^3.2.3",
+    "ofetch": "^1.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.35.2",
+    "@types/inquirer": "^9.0.3",
     "@types/js-yaml": "^4.0.5",
     "@types/node": "^18.13.0",
-    "@yunyoujun/utils": "^0.2.3",
+    "@yunyoujun/utils": "^0.3.4",
     "consola": "^2.15.3",
     "eslint": "^8.14.0",
     "tsx": "^3.12.3",

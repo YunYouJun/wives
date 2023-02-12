@@ -1,18 +1,18 @@
 #!/usr/bin/env node
-const fs = require('fs')
-const { program } = require('commander')
-const yaml = require('js-yaml')
+import fs from 'fs'
+import { program } from 'commander'
+import yaml from 'js-yaml'
 
-const inquirer = require('inquirer')
-const pkg = require('../package.json')
-const { questions, dataFile } = require('./config')
+import inquirer from 'inquirer'
+import pkg from '../package.json'
+import { dataFile, questions } from '../config'
 
 program.version(pkg.version)
 
 program.command('add').action(async () => {
   const answers = await inquirer.prompt(questions)
   const item = yaml.dump([answers])
-  // eslint-disable-next-line no-console
+
   console.log(item)
   fs.appendFileSync(dataFile, item)
 })

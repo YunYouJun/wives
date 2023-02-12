@@ -1,11 +1,11 @@
-import fetch from 'node-fetch'
 import consola from 'consola'
+import { ofetch } from 'ofetch'
 
 /**
  * 从 [AniList](https://anilist.co/) 获取图片
  * @param {*} id 角色 ID
  */
-export async function getImageFromAniList(id: string) {
+export async function getImageFromAniList(id: number) {
   const query = `
 query ($id: Int) { # Define which variables will be used in the query (id)
   Character (id: $id) {
@@ -34,12 +34,7 @@ query ($id: Int) { # Define which variables will be used in the query (id)
     }),
   }
 
-  const mediumImage = await fetch(url, options)
-    .then<{ data: any } | any>((response) => {
-      return response.json().then((json) => {
-        return response.ok ? json : Promise.reject(json)
-      })
-    })
+  const mediumImage = await ofetch(url, options)
     .then((data) => {
       return data.data.Character.image.medium
     })
