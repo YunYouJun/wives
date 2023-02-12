@@ -1,5 +1,6 @@
-import consola from 'consola'
 import { ofetch } from 'ofetch'
+import consola from 'consola'
+import { sleep } from '@yunyoujun/utils'
 
 /**
  * 从 [AniList](https://anilist.co/) 获取图片
@@ -22,26 +23,40 @@ query ($id: Int) { # Define which variables will be used in the query (id)
 
   // Define the config we'll need for our Api request
   const url = 'https://graphql.anilist.co'
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-  }
 
-  const mediumImage = await ofetch(url, options)
-    .then((data) => {
-      return data.data.Character.image.medium
+  let mediumImage = ''
+
+  try {
+    const data = await ofetch(url, {
+      method: 'POST',
+      // auto add
+      // headers: {
+      //   'Content-Type': 'application/json',
+      //   'Accept': 'application/json',
+      // },
+      // auto stringify
+      body: {
+        query,
+        variables,
+      },
+
+      // maybe too many requests
+      // retry: 1,
     })
-    .catch((e) => {
-      consola.error('Anilist ID:', id)
-      console.error(e)
-    })
+
+    mediumImage = data.data.Character.image.medium as string
+  }
+  catch (e: any) {
+    consola.error('Anilist ID:', id)
+    console.error(e)
+    const status = e.data.errors[0].status as number
+    // 429 too many requests
+    if (status && status === 429) {
+      consola.info('Sleep and try again')
+      await sleep(6000)
+      mediumImage = await getImageFromAniList(id)
+    }
+  }
 
   return mediumImage
 }

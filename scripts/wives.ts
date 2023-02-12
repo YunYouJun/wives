@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import fs from 'fs'
 import { program } from 'commander'
 import yaml from 'js-yaml'

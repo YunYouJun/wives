@@ -4,7 +4,7 @@ import * as yaml from 'js-yaml'
 import { sleep } from '@yunyoujun/utils'
 
 import consola from 'consola'
-import { cyan, yellow } from 'chalk'
+import { blue, cyan, yellow } from 'chalk'
 import { dataFile } from '../config'
 import { getImageFromAniList } from './utils'
 import { generateMarkdown } from './generateList'
@@ -35,7 +35,7 @@ async function writeJson(girls: Girl[]) {
     }
 
     const girl = girls[i]
-    consola.info(`Fetch ${i + 1} girl info: ${cyan(girl.name)} + ${yellow(girl.anilist_id)}...`)
+    consola.info(`${blue(i + 1)} Fetch girl info: ${cyan(girl.name)} ${yellow(girl.anilist_id)} ...`)
 
     if (!girl.avatar) {
       girl.avatar = girl.anilist_id

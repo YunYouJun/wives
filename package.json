@@ -13,7 +13,7 @@
     "update": "git add -A && git commit -m '♀: update waifu' && git push",
     "wives": "tsx scripts/wives add",
     "lint": "eslint .",
-    "typecheck": "tsc ./**/*.ts --noEmit"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "commander": "^10.0.0",
