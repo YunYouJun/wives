@@ -5,7 +5,7 @@ import consola from 'consola'
  * 从 [AniList](https://anilist.co/) 获取图片
  * @param {*} id 角色 ID
  */
-export async function getImageFromAniList(id) {
+export async function getImageFromAniList(id: string) {
   const query = `
 query ($id: Int) { # Define which variables will be used in the query (id)
   Character (id: $id) {
@@ -35,7 +35,7 @@ query ($id: Int) { # Define which variables will be used in the query (id)
   }
 
   const mediumImage = await fetch(url, options)
-    .then((response) => {
+    .then<{ data: any } | any>((response) => {
       return response.json().then((json) => {
         return response.ok ? json : Promise.reject(json)
       })

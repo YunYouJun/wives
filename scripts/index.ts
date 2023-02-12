@@ -1,8 +1,10 @@
-import fs from 'fs'
-import yaml from 'js-yaml'
+import * as fs from 'fs'
+import * as yaml from 'js-yaml'
 
 import { common } from '@yunyoujun/utils'
+
 import consola from 'consola'
+import { cyan } from 'chalk'
 import { dataFile } from '../bin/config'
 import { getImageFromAniList } from './utils'
 import { generateMarkdown } from './generateList'
@@ -24,13 +26,13 @@ async function writeJson(girls: Girl[]) {
   // 90/m
   const maxRequests = 90
   for (let i = 0; i < girls.length; i++) {
-    consola.info(`Fetch ${i + 1} girl info...`)
+    const girl = girls[i]
+    consola.info(`Fetch ${i + 1} girl info: ${cyan(girl.name)}...`)
     if ((i + 1) % maxRequests === 0) {
       consola.info('Sleep 60s to avoid too many requests!')
       await common.sleep(60000)
     }
 
-    const girl = girls[i]
     if (!girl.avatar) {
       girl.avatar = girl.anilist_id
         ? await getImageFromAniList(girl.anilist_id)
@@ -55,7 +57,7 @@ function writeMarkdown(girls) {
 async function main() {
   try {
     consola.info(`Read data from ${dataFile}`)
-    const girls = yaml.load(fs.readFileSync(dataFile, 'utf8'))
+    const girls = yaml.load(fs.readFileSync(dataFile, 'utf8')) as Girl[]
     consola.info('Write Json File...')
     await writeJson(girls)
     writeMarkdown(girls)
