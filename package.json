@@ -1,6 +1,7 @@
 {
   "name": "wives",
   "version": "0.0.1",
+  "packageManager": "pnpm@7.27.0",
   "private": true,
   "description": "My Favourite Wives.",
   "author": "YunYouJun <me@yunyoujun.cn>",
