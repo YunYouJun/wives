@@ -1,4 +1,5 @@
-import fs from 'fs'
+import fs from 'node:fs'
+import process from 'node:process'
 import { program } from 'commander'
 import yaml from 'js-yaml'
 
