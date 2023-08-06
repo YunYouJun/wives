@@ -1,4 +1,4 @@
-import * as fs from 'fs'
+import * as fs from 'node:fs'
 import * as yaml from 'js-yaml'
 
 import { sleep } from '@yunyoujun/utils'
@@ -17,8 +17,8 @@ async function writeJson(girls: Girl[]) {
   try {
     fs.mkdirSync('./dist/')
   }
-  catch ({ code }) {
-    if (code !== 'EEXIST')
+  catch (e: any) {
+    if (e.code !== 'EEXIST')
       return
   }
 
