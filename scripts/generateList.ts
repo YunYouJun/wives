@@ -27,10 +27,10 @@ export function generateMarkdown(girls: Girl[]) {
     const from = girl.douban_id
       ? `[${girl.from}](https://movie.douban.com/subject/${girl.douban_id}/)`
       : `[${
-          girl.from
-        }](https://search.douban.com/movie/subject_search?search_text=${encodeURIComponent(
-          girl.from,
-        )})`
+        girl.from
+      }](https://search.douban.com/movie/subject_search?search_text=${encodeURIComponent(
+        girl.from,
+      )})`
     // 萌娘百科链接
     const moegirl = `[Link](https://zh.moegirl.org.cn/${
       girl.moegirl ? girl.moegirl : girl.name

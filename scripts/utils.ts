@@ -1,6 +1,6 @@
-import { ofetch } from 'ofetch'
-import consola from 'consola'
 import { sleep } from '@yunyoujun/utils'
+import consola from 'consola'
+import { ofetch } from 'ofetch'
 
 /**
  * 从 [AniList](https://anilist.co/) 获取图片

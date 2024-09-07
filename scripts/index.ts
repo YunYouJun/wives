@@ -1,13 +1,13 @@
 import * as fs from 'node:fs'
-import * as yaml from 'js-yaml'
-
 import { sleep } from '@yunyoujun/utils'
 
 import consola from 'consola'
-import { blue, cyan, yellow } from 'chalk'
+
+import * as yaml from 'js-yaml'
+import colors from 'picocolors'
 import { dataFile } from '../config'
-import { getImageFromAniList } from './utils'
 import { generateMarkdown } from './generateList'
+import { getImageFromAniList } from './utils'
 import type { Girl } from './types'
 
 /**
@@ -26,7 +26,7 @@ async function writeJson(girls: Girl[]) {
   // 90/m
   const maxRequests = 90
 
-  consola.info(`Lovely Girls ${cyan(girls.length)}`)
+  consola.info(`Lovely Girls ${colors.cyan(girls.length)}`)
   for (let i = 0; i < girls.length; i++) {
     // sleep before
     if ((i + 1) % maxRequests === 0) {
@@ -35,7 +35,7 @@ async function writeJson(girls: Girl[]) {
     }
 
     const girl = girls[i]
-    consola.info(`${blue(i + 1)} Fetch girl info: ${cyan(girl.name)} ${yellow(girl.anilist_id)} ...`)
+    consola.info(`${colors.blue(i + 1)} Fetch girl info: ${colors.cyan(girl.name)} ${colors.yellow(girl.anilist_id)} ...`)
 
     if (!girl.avatar) {
       girl.avatar = girl.anilist_id
@@ -43,7 +43,7 @@ async function writeJson(girls: Girl[]) {
         : `https://cdn.jsdelivr.net/gh/YunYouJun/wives@gh-pages/images/tachie/${girl.tachie}`
     }
 
-    consola.success(`avatar: ${yellow(girl.avatar)}`)
+    consola.success(`avatar: ${colors.yellow(girl.avatar)}`)
   }
 
   fs.writeFileSync('./dist/girls.json', JSON.stringify(girls))
