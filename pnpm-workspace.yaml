@@ -1,0 +1,10 @@
+allowBuilds:
+  esbuild: true
+shamefullyHoist: true
+shellEmulator: true
+trustPolicy: no-downgrade
+packages:
+  - .
+overrides:
+  nanoid@3: ^3.3.18
+  postcss: ^8.5.26

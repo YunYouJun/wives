@@ -1,14 +1,14 @@
+import type { Girl } from './types'
 import * as fs from 'node:fs'
+
 import { sleep } from '@yunyoujun/utils'
 
 import consola from 'consola'
-
 import * as yaml from 'js-yaml'
 import colors from 'picocolors'
 import { dataFile } from '../config'
 import { generateMarkdown } from './generateList'
 import { getImageFromAniList } from './utils'
-import type { Girl } from './types'
 
 /**
  * 生成 Json 列表

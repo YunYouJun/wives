@@ -3,7 +3,7 @@ import process from 'node:process'
 import { input, number } from '@inquirer/prompts'
 import { program } from 'commander'
 
-import yaml from 'js-yaml'
+import * as yaml from 'js-yaml'
 import { dataFile } from '../config'
 import pkg from '../package.json'
 
